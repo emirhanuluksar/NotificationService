@@ -15,12 +15,13 @@ public class NotificationManager : INotificationService {
     }
 
     public async Task<List<Notification>> GetNotifications() {
-        var notifications = await _notificationRepository.GetNotificationsAsync();
+        var notifications = await _notificationRepository.GetListAsync();
         return notifications.ToList();
     }
 
-    public async Task SendNotificationAsync(Notification notification) {
+    public async Task<Notification> SendNotificationAsync(Notification notification) {
         await _hubContext.Clients.All.SendAsync("ReceiveNotification", notification);
-        await _notificationRepository.AddNotificationAsync(notification);
+        var createdNotification = await _notificationRepository.AddAsync(notification);
+        return createdNotification;
     }
 }
