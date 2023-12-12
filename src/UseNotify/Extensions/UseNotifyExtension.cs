@@ -4,7 +4,7 @@ using UseNotify.Hubs;
 using UseNotify.Repositories;
 using UseNotify.Services;
 
-namespace UseNotify;
+namespace UseNotify.Extensions;
 
 public static class UseNotifyExtensions {
     public static IServiceCollection AddUseNotify<TDbContext>(this IServiceCollection services)

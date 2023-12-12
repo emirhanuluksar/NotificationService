@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>UseNotify</PackageId>
-    <Version>10.02.20</Version>
+    <Version>10.02.21</Version>
     <Authors>ULUARS</Authors>
     <Company>ULUARS</Company>
     <Product>UseNotify</Product>
